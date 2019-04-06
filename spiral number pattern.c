@@ -1,5 +1,8 @@
 #include<stdio.h>
 
+/*numbers from 1 to 49 are printed spirally in form of a square,
+starting from the middle of the square. 
+*/
 
 int layerFinder(int row, int col, int dim)
 {
@@ -12,7 +15,7 @@ no_of_layers = dim % 2 == 0 ? dim/2 : dim / 2 + 1;
 for(layerctr = 1; layerctr <= no_of_layers; layerctr++,r++,c--)
 {
     if(row == r && (col >= r && col <=c) || row == c && ( col >= r && col<=c) ||\
-       ( col == c && (row >=r && row <=c )  || ( (col == r) && (row >= r && row <=c)))       )
+       ( col == c && (row >=r && row <=c )  || ( (col == r) && (row >= r && row <=c))))
         break;
 
 }
@@ -33,9 +36,7 @@ int getOffset(int row, int col, int dim)
 }
 int main()
 {
-int row, col, dim = 7
-
-,layer_number, offset=0,newdim, newrow, newcol, ctr;
+int row, col, dim = 7,layer_number, offset=0,newdim, newrow, newcol, ctr;
 
 for(row = 0; row < dim; row++,printf("\n") )
 {
